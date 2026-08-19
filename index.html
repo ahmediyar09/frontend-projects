@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Адаптивность -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Футбольная академия — профессиональные тренировки для детей и взрослых."
+    >
+
+    <title>Football Academy — футбольная академия</title>
+
+    <!-- Подключение CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================================
+         HEADER / NAVIGATION
+         ========================================= -->
+    <header class="header">
+        <div class="container header__inner">
+
+            <!-- Логотип -->
+            <a class="logo" href="#hero" aria-label="Football Academy">
+                <span class="logo__ball">⚽</span>
+                <span>FOOTBALL<span class="logo__accent">ACADEMY</span></span>
+            </a>
+
+            <!-- Основная навигация -->
+            <nav class="nav" aria-label="Основная навигация">
+                <a href="#advantages">Преимущества</a>
+                <a href="#gallery">Галерея</a>
+                <a href="#contact">Контакты</a>
+            </nav>
+
+            <!-- Кнопка CTA -->
+            <a class="button button--small" href="#contact">
+                Записаться
+            </a>
+
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- =========================================
+             HERO
+             ========================================= -->
+        <section class="hero" id="hero">
+            <div class="container hero__content">
+
+                <div class="hero__text">
+
+                    <p class="hero__label">
+                        ⚡ FOOTBALL ACADEMY
+                    </p>
+
+                    <h1>
+                        Тренируйся.
+                        <span>Побеждай.</span>
+                        Стань лучше.
+                    </h1>
+
+                    <p class="hero__description">
+                        Современная футбольная академия для тех,
+                        кто хочет раскрыть свой потенциал, улучшить
+                        технику и научиться играть как команда.
+                    </p>
+
+                    <div class="hero__actions">
+                        <a class="button" href="#contact">
+                            Записаться на тренировку
+                            <span>→</span>
+                        </a>
+
+                        <a class="hero__link" href="#advantages">
+                            Узнать больше
+                            <span>↓</span>
+                        </a>
+                    </div>
+
+                </div>
+
+                <!-- Декоративная статистика -->
+                <div class="hero__stats">
+
+                    <div class="stat">
+                        <strong>10+</strong>
+                        <span>лет опыта</span>
+                    </div>
+
+                    <div class="stat">
+                        <strong>500+</strong>
+                        <span>учеников</span>
+                    </div>
+
+                    <div class="stat">
+                        <strong>24</strong>
+                        <span>профессиональных тренера</span>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- =========================================
+             ADVANTAGES
+             ========================================= -->
+        <section class="advantages section" id="advantages">
+            <div class="container">
+
+                <div class="section-heading">
+                    <p class="section-heading__label">ПОЧЕМУ МЫ</p>
+
+                    <h2>
+                        Создаём игроков,
+                        <span>а не просто спортсменов</span>
+                    </h2>
+
+                    <p>
+                        Комплексный подход к тренировкам помогает
+                        развивать технику, физическую форму и
+                        командное мышление.
+                    </p>
+                </div>
+
+
+                <!-- Grid из трёх карточек -->
+                <div class="advantages__grid">
+
+                    <article class="advantage-card">
+                        <div class="advantage-card__icon">⚡</div>
+
+                        <span class="advantage-card__number">01</span>
+
+                        <h3>Профессиональные тренеры</h3>
+
+                        <p>
+                            Тренировки проводят опытные специалисты
+                            с профессиональным футбольным опытом.
+                        </p>
+
+                        <a href="#contact">Подробнее →</a>
+                    </article>
+
+
+                    <article class="advantage-card">
+                        <div class="advantage-card__icon">🎯</div>
+
+                        <span class="advantage-card__number">02</span>
+
+                        <h3>Индивидуальный подход</h3>
+
+                        <p>
+                            Анализируем сильные и слабые стороны
+                            каждого игрока и формируем персональную
+                            программу развития.
+                        </p>
+
+                        <a href="#contact">Подробнее →</a>
+                    </article>
+
+
+                    <article class="advantage-card">
+                        <div class="advantage-card__icon">🏆</div>
+
+                        <span class="advantage-card__number">03</span>
+
+                        <h3>Результат и команда</h3>
+
+                        <p>
+                            Участвуем в турнирах и регулярно проверяем
+                            прогресс наших игроков на практике.
+                        </p>
+
+                        <a href="#contact">Подробнее →</a>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- =========================================
+             GALLERY
+             ========================================= -->
+        <section class="gallery section" id="gallery">
+            <div class="container">
+
+                <div class="section-heading section-heading--row">
+                    <div>
+                        <p class="section-heading__label">НАША ЖИЗНЬ</p>
+
+                        <h2>
+                            Моменты с
+                            <span>тренировок</span>
+                        </h2>
+                    </div>
+
+                    <p>
+                        Энергия тренировок, командный дух
+                        и любовь к футболу.
+                    </p>
+                </div>
+
+
+                <!-- Адаптивная CSS Grid галерея -->
+                <div class="gallery__grid">
+
+                    <figure class="gallery__item gallery__item--large">
+                        <img
+                            src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1200&q=80"
+                            alt="Футболисты во время тренировки"
+                            loading="lazy"
+                        >
+                    </figure>
+
+                    <figure class="gallery__item">
+                        <img
+                            src="https://images.unsplash.com/photo-1553778263-73a83bab9b0c?auto=format&fit=crop&w=900&q=80"
+                            alt="Футбольный мяч на поле"
+                            loading="lazy"
+                        >
+                    </figure>
+
+                    <figure class="gallery__item">
+                        <img
+                            src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=900&q=80"
+                            alt="Футбольная тренировка"
+                            loading="lazy"
+                        >
+                    </figure>
+
+                    <figure class="gallery__item">
+                        <img
+                            src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=900&q=80"
+                            alt="Игроки футбольной команды"
+                            loading="lazy"
+                        >
+                    </figure>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- =========================================
+             CONTACT FORM
+             ========================================= -->
+        <section class="contact section" id="contact">
+            <div class="container">
+
+                <div class="contact__wrapper">
+
+                    <!-- Информация -->
+                    <div class="contact__info">
+
+                        <p class="section-heading__label">
+                            НАЧНИ ПРЯМО СЕЙЧАС
+                        </p>
+
+                        <h2>
+                            Готов выйти
+                            <span>на новый уровень?</span>
+                        </h2>
+
+                        <p>
+                            Оставьте заявку, и наш менеджер свяжется
+                            с вами, чтобы подобрать подходящую группу
+                            и рассказать о ближайших тренировках.
+                        </p>
+
+                        <div class="contact__details">
+                            <div>
+                                <span>Телефон</span>
+                                <strong>+7 (999) 123-45-67</strong>
+                            </div>
+
+                            <div>
+                                <span>Email</span>
+                                <strong>hello@football-academy.ru</strong>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Форма -->
+                    <form class="contact-form">
+
+                        <div class="form-group">
+                            <label for="name">Ваше имя</label>
+
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="Алексей"
+                                required
+                            >
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="phone">Телефон</label>
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                placeholder="+7 (___) ___-__-__"
+                                required
+                            >
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="age">Возраст игрока</label>
+
+                            <select id="age" name="age">
+                                <option value="">Выберите возраст</option>
+                                <option value="6-9">6–9 лет</option>
+                                <option value="10-13">10–13 лет</option>
+                                <option value="14-17">14–17 лет</option>
+                                <option value="18+">18+ лет</option>
+                            </select>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="message">Комментарий</label>
+
+                            <textarea
+                                id="message"
+                                name="message"
+                                rows="4"
+                                placeholder="Расскажите немного о себе..."
+                            ></textarea>
+                        </div>
+
+
+                        <button class="button button--full" type="submit">
+                            Отправить заявку
+                            <span>→</span>
+                        </button>
+
+                        <p class="form-note">
+                            Нажимая кнопку, вы соглашаетесь
+                            с обработкой персональных данных.
+                        </p>
+
+                    </form>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- =========================================
+         FOOTER
+         ========================================= -->
+    <footer class="footer">
+        <div class="container footer__inner">
+
+            <a class="logo" href="#hero">
+                <span class="logo__ball">⚽</span>
+                <span>FOOTBALL<span class="logo__accent">ACADEMY</span></span>
+            </a>
+
+            <p>
+                © 2025 Football Academy. Все права защищены.
+            </p>
+
+            <a href="#hero" class="footer__top" aria-label="Наверх">
+                ↑
+            </a>
+
+        </div>
+    </footer>
+
+</body>
+</html>

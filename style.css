@@ -1,0 +1,1177 @@
+/* =========================================
+   1. БАЗОВЫЕ СТИЛИ И ПЕРЕМЕННЫЕ
+   ========================================= */
+
+   :root {
+    --bg: #070a0d;
+    --bg-light: #0d1217;
+    --card: #11171d;
+    --card-hover: #151d24;
+
+    --text: #f5f7f8;
+    --text-muted: #929ba5;
+
+    --accent: #b8ff00;
+    --accent-dark: #8dcc00;
+
+    --border: rgba(255, 255, 255, 0.09);
+
+    --container: 1200px;
+
+    --radius: 18px;
+
+    --transition: 0.3s ease;
+}
+
+
+/* Сброс браузерных стилей */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    min-width: 320px;
+
+    background:
+        radial-gradient(
+            circle at 80% 10%,
+            rgba(184, 255, 0, 0.06),
+            transparent 25%
+        ),
+        var(--bg);
+
+    color: var(--text);
+
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    line-height: 1.6;
+}
+
+
+/* Общие элементы */
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+img {
+    display: block;
+    width: 100%;
+}
+
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+
+.container {
+    width: min(
+        calc(100% - 40px),
+        var(--container)
+    );
+
+    margin-inline: auto;
+}
+
+
+.section {
+    padding: 110px 0;
+}
+
+
+/* =========================================
+   2. HEADER
+   ========================================= */
+
+.header {
+    position: absolute;
+    z-index: 10;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    border-bottom: 1px solid var(--border);
+
+    background: rgba(7, 10, 13, 0.65);
+
+    backdrop-filter: blur(12px);
+}
+
+
+.header__inner {
+    min-height: 82px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+/* Логотип */
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    font-size: 15px;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+}
+
+
+.logo__ball {
+    font-size: 25px;
+}
+
+
+.logo__accent {
+    color: var(--accent);
+}
+
+
+/* Навигация */
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+
+.nav a {
+    position: relative;
+
+    color: var(--text-muted);
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: color var(--transition);
+}
+
+
+.nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -8px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--accent);
+
+    transition: width var(--transition);
+}
+
+
+.nav a:hover {
+    color: var(--text);
+}
+
+
+.nav a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================================
+   3. BUTTONS
+   ========================================= */
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+
+    min-height: 56px;
+
+    padding: 0 26px;
+
+    border: 0;
+    border-radius: 8px;
+
+    background: var(--accent);
+    color: #080b0e;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 30px rgba(184, 255, 0, 0.12);
+
+    transition:
+        transform var(--transition),
+        background var(--transition),
+        box-shadow var(--transition);
+}
+
+
+.button span {
+    font-size: 20px;
+    line-height: 1;
+}
+
+
+.button:hover {
+    background: #c7ff3d;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 14px 35px rgba(184, 255, 0, 0.25);
+}
+
+
+.button:active {
+    transform: translateY(-1px);
+}
+
+
+.button--small {
+    min-height: 42px;
+    padding-inline: 20px;
+}
+
+
+.button--full {
+    width: 100%;
+}
+
+
+/* =========================================
+   4. HERO
+   ========================================= */
+
+.hero {
+    position: relative;
+
+    min-height: 800px;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(7, 10, 13, 0.98) 0%,
+            rgba(7, 10, 13, 0.82) 48%,
+            rgba(7, 10, 13, 0.35) 100%
+        ),
+        url("https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=2000&q=85")
+        center / cover no-repeat;
+}
+
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    right: -120px;
+    bottom: -180px;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    background: var(--accent);
+
+    opacity: 0.06;
+
+    filter: blur(30px);
+}
+
+
+.hero__content {
+    position: relative;
+    z-index: 1;
+
+    padding-top: 80px;
+}
+
+
+.hero__text {
+    max-width: 750px;
+}
+
+
+.hero__label,
+.section-heading__label {
+    margin-bottom: 18px;
+
+    color: var(--accent);
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+
+.hero h1 {
+    max-width: 850px;
+
+    margin-bottom: 28px;
+
+    font-size: clamp(48px, 7vw, 88px);
+    line-height: 0.98;
+    letter-spacing: -4px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+
+.hero h1 span {
+    color: var(--accent);
+}
+
+
+.hero__description {
+    max-width: 600px;
+
+    margin-bottom: 35px;
+
+    color: #b3bac1;
+
+    font-size: 17px;
+}
+
+
+.hero__actions {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+
+.hero__link {
+    color: var(--text-muted);
+
+    font-size: 14px;
+    font-weight: 700;
+
+    transition: color var(--transition);
+}
+
+
+.hero__link span {
+    margin-left: 8px;
+    color: var(--accent);
+}
+
+
+.hero__link:hover {
+    color: var(--text);
+}
+
+
+/* Статистика */
+
+.hero__stats {
+    display: flex;
+    gap: 60px;
+
+    margin-top: 100px;
+}
+
+
+.stat {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.stat strong {
+    color: var(--text);
+
+    font-size: 30px;
+    line-height: 1;
+
+    font-weight: 900;
+}
+
+
+.stat span {
+    margin-top: 8px;
+
+    color: var(--text-muted);
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   5. SECTION HEADINGS
+   ========================================= */
+
+.section-heading {
+    max-width: 700px;
+
+    margin-bottom: 55px;
+}
+
+
+.section-heading h2,
+.contact h2 {
+    margin-bottom: 20px;
+
+    font-size: clamp(36px, 5vw, 58px);
+    line-height: 1.05;
+
+    letter-spacing: -2px;
+    font-weight: 900;
+}
+
+
+.section-heading h2 span,
+.contact h2 span {
+    color: var(--accent);
+}
+
+
+.section-heading > p:last-child {
+    color: var(--text-muted);
+
+    font-size: 16px;
+}
+
+
+.section-heading--row {
+    max-width: none;
+
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+
+    gap: 40px;
+}
+
+
+.section-heading--row > p {
+    max-width: 350px;
+    padding-bottom: 5px;
+}
+
+
+/* =========================================
+   6. ADVANTAGES
+   ========================================= */
+
+.advantages {
+    background: var(--bg-light);
+}
+
+
+.advantages__grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+.advantage-card {
+    position: relative;
+
+    min-height: 360px;
+
+    padding: 35px;
+
+    overflow: hidden;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+
+    background: var(--card);
+
+    transition:
+        transform var(--transition),
+        border-color var(--transition),
+        background var(--transition);
+}
+
+
+.advantage-card:hover {
+    transform: translateY(-8px);
+
+    border-color: rgba(184, 255, 0, 0.3);
+
+    background: var(--card-hover);
+}
+
+
+.advantage-card__icon {
+    display: flex;
+
+    width: 55px;
+    height: 55px;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 55px;
+
+    border-radius: 12px;
+
+    background: rgba(184, 255, 0, 0.1);
+
+    font-size: 25px;
+}
+
+
+.advantage-card__number {
+    position: absolute;
+
+    top: 35px;
+    right: 35px;
+
+    color: #323a42;
+
+    font-size: 13px;
+    font-weight: 800;
+}
+
+
+.advantage-card h3 {
+    margin-bottom: 14px;
+
+    font-size: 21px;
+    line-height: 1.2;
+}
+
+
+.advantage-card p {
+    margin-bottom: 25px;
+
+    color: var(--text-muted);
+
+    font-size: 14px;
+}
+
+
+.advantage-card a {
+    color: var(--accent);
+
+    font-size: 13px;
+    font-weight: 700;
+
+    transition: opacity var(--transition);
+}
+
+
+.advantage-card a:hover {
+    opacity: 0.7;
+}
+
+
+/* =========================================
+   7. GALLERY
+   ========================================= */
+
+.gallery__grid {
+    display: grid;
+
+    grid-template-columns: 1.4fr 1fr 1fr;
+
+    grid-template-rows: 240px 240px;
+
+    gap: 14px;
+}
+
+
+.gallery__item {
+    position: relative;
+
+    min-width: 0;
+
+    overflow: hidden;
+
+    border-radius: 14px;
+
+    background: var(--card);
+}
+
+
+.gallery__item--large {
+    grid-row: span 2;
+}
+
+
+.gallery__item img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    filter: grayscale(25%);
+
+    transition:
+        transform 0.6s ease,
+        filter 0.6s ease;
+}
+
+
+.gallery__item:hover img {
+    transform: scale(1.06);
+    filter: grayscale(0%);
+}
+
+
+/* =========================================
+   8. CONTACT
+   ========================================= */
+
+.contact {
+    background: var(--bg-light);
+}
+
+
+.contact__wrapper {
+    display: grid;
+
+    grid-template-columns: 0.9fr 1.1fr;
+
+    gap: 80px;
+
+    padding: 70px;
+
+    border: 1px solid var(--border);
+    border-radius: 24px;
+
+    background:
+        radial-gradient(
+            circle at 100% 0%,
+            rgba(184, 255, 0, 0.07),
+            transparent 35%
+        ),
+        var(--card);
+}
+
+
+.contact__info > p:not(.section-heading__label) {
+    max-width: 500px;
+
+    margin-bottom: 40px;
+
+    color: var(--text-muted);
+}
+
+
+.contact__details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.contact__details div {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.contact__details span {
+    color: var(--text-muted);
+
+    font-size: 12px;
+
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+.contact__details strong {
+    margin-top: 4px;
+
+    font-size: 15px;
+}
+
+
+/* Форма */
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+
+.form-group label {
+    color: #c9cdd2;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    outline: none;
+
+    background: #0a0e12;
+    color: var(--text);
+
+    padding: 14px 15px;
+
+    transition: border-color var(--transition);
+}
+
+
+.form-group input,
+.form-group select {
+    height: 48px;
+}
+
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #5d6670;
+}
+
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--accent);
+}
+
+
+.form-group select {
+    cursor: pointer;
+}
+
+
+.form-note {
+    color: #69727c;
+
+    font-size: 11px;
+    text-align: center;
+}
+
+
+/* =========================================
+   9. FOOTER
+   ========================================= */
+
+.footer {
+    border-top: 1px solid var(--border);
+
+    background: var(--bg);
+}
+
+
+.footer__inner {
+    min-height: 100px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+.footer p {
+    color: var(--text-muted);
+
+    font-size: 12px;
+}
+
+
+.footer__top {
+    display: flex;
+
+    width: 40px;
+    height: 40px;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--border);
+    border-radius: 50%;
+
+    color: var(--accent);
+
+    transition:
+        background var(--transition),
+        transform var(--transition);
+}
+
+
+.footer__top:hover {
+    background: rgba(184, 255, 0, 0.08);
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================
+   10. TABLET
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    .section {
+        padding: 80px 0;
+    }
+
+
+    .nav {
+        gap: 20px;
+    }
+
+
+    .hero {
+        min-height: 700px;
+    }
+
+
+    .hero__stats {
+        margin-top: 70px;
+    }
+
+
+    .advantages__grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    .advantage-card:last-child {
+        grid-column: 1 / -1;
+    }
+
+
+    .gallery__grid {
+        grid-template-columns: 1fr 1fr;
+
+        grid-template-rows:
+            300px
+            220px;
+    }
+
+
+    .gallery__item--large {
+        grid-row: span 1;
+        grid-column: span 2;
+    }
+
+
+    .contact__wrapper {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+
+        padding: 50px;
+    }
+}
+
+
+/* =========================================
+   11. MOBILE
+   ========================================= */
+
+@media (max-width: 640px) {
+
+    .container {
+        width: min(
+            calc(100% - 28px),
+            var(--container)
+        );
+    }
+
+
+    .section {
+        padding: 65px 0;
+    }
+
+
+    /* Header */
+
+    .header__inner {
+        min-height: 70px;
+    }
+
+
+    .nav {
+        display: none;
+    }
+
+
+    .header .button--small {
+        min-height: 38px;
+
+        padding-inline: 15px;
+
+        font-size: 12px;
+    }
+
+
+    /* Hero */
+
+    .hero {
+        min-height: 720px;
+
+        background-position: 65% center;
+    }
+
+
+    .hero__content {
+        padding-top: 70px;
+    }
+
+
+    .hero h1 {
+        font-size: clamp(42px, 13vw, 60px);
+
+        letter-spacing: -2px;
+    }
+
+
+    .hero__description {
+        font-size: 15px;
+    }
+
+
+    .hero__actions {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 20px;
+    }
+
+
+    .hero__stats {
+        display: grid;
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+        gap: 15px;
+
+        margin-top: 65px;
+    }
+
+
+    .stat strong {
+        font-size: 23px;
+    }
+
+
+    .stat span {
+        font-size: 10px;
+        line-height: 1.3;
+    }
+
+
+    /* Заголовки */
+
+    .section-heading h2,
+    .contact h2 {
+        font-size: 38px;
+
+        letter-spacing: -1.5px;
+    }
+
+
+    .section-heading--row {
+        display: block;
+    }
+
+
+    .section-heading--row > p {
+        margin-top: 20px;
+    }
+
+
+    /* Карточки */
+
+    .advantages__grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .advantage-card:last-child {
+        grid-column: auto;
+    }
+
+
+    .advantage-card {
+        min-height: auto;
+
+        padding: 28px;
+    }
+
+
+    .advantage-card__icon {
+        margin-bottom: 40px;
+    }
+
+
+    /* Галерея */
+
+    .gallery__grid {
+        grid-template-columns: 1fr;
+
+        grid-template-rows:
+            280px
+            220px
+            220px
+            220px;
+    }
+
+
+    .gallery__item--large {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+
+    /* Контакты */
+
+    .contact__wrapper {
+        padding: 30px 20px;
+
+        border-radius: 18px;
+    }
+
+
+    /* Footer */
+
+    .footer__inner {
+        min-height: 130px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        padding: 25px 0;
+
+        text-align: center;
+    }
+}
+
+
+/* =========================================
+   12. ОЧЕНЬ МАЛЕНЬКИЕ ЭКРАНЫ
+   ========================================= */
+
+@media (max-width: 380px) {
+
+    .header .logo {
+        font-size: 12px;
+    }
+
+
+    .header .logo__ball {
+        font-size: 20px;
+    }
+
+
+    .header .button--small {
+        padding-inline: 12px;
+    }
+
+
+    .hero h1 {
+        font-size: 39px;
+    }
+
+
+    .hero__stats {
+        gap: 8px;
+    }
+
+
+    .stat strong {
+        font-size: 20px;
+    }
+
+
+    .stat span {
+        font-size: 9px;
+    }
+
+
+    .button {
+        width: 100%;
+
+        padding-inline: 18px;
+    }
+}
+
+
+/* =========================================
+   13. REDUCED MOTION
+   Уважение системной настройки пользователя
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
